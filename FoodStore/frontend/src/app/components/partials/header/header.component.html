@@ -1,0 +1,25 @@
+<header>
+  <div class="container">
+    <a routerLink="/" class="logo">Food Store</a>
+    <nav>
+      <ul>
+        <li *ngIf="!isAuth">
+          <a routerLink="/login">Login</a>
+        </li>
+        <li class="menu-container" *ngIf="isAuth">
+          <a routerLink="/dashboard">{{ user.name }}</a>
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/profile">Orders</a>
+            <a (click)="logout()">Log Out</a>
+          </div>
+        </li>
+        <li>
+          <a routerLink="/cart-page"
+            >Cart <span *ngIf="cartQuantity">{{ cartQuantity }}</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

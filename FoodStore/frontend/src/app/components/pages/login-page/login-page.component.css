@@ -1,0 +1,32 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 3rem;
+    }
+    
+    .details{
+      width: 28rem;
+    }
+
+    .input-container{
+        margin-top: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    
+    .error-list{
+      color: red;
+    }
+    
+    .register{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
