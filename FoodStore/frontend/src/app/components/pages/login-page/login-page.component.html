@@ -30,6 +30,12 @@
       <div class="button">
         <button type="submit">Login</button>
       </div>
+      <div class="register">
+        Dont Have An Account ? {{ " " }}
+        <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }"
+          >Register Here</a
+        >
+      </div>
     </form>
   </div>
 </div>

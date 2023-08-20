@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
+import { IUserLogin } from 'src/app/shared/interfaces/IUserLogin';
 
 @Component({
   selector: 'app-login-page',
@@ -12,6 +13,7 @@ export class LoginPageComponent implements OnInit {
   loginForm!: FormGroup;
   isSubmitted = false;
   returnUrl = '';
+  user!: IUserLogin;
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
@@ -46,5 +48,9 @@ export class LoginPageComponent implements OnInit {
       .subscribe(() => {
         this.router.navigateByUrl(this.returnUrl);
       });
+
+    this.userService.login(this.user).subscribe(() => {
+      this.router.navigateByUrl(this.returnUrl);
+    });
   }
 }

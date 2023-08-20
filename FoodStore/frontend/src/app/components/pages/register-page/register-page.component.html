@@ -1,0 +1,72 @@
+<div class="container" style="display: block; margin: 100px">
+  <div class="details">
+    <app-title title="Register"></app-title>
+
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <div
+        class="input-container"
+        style="margin-top: 10px; margin-bottom: 10px"
+      >
+        <label>Name</label>
+        <div>
+          <input type="text" placeholder="Name" formControlName="name" />
+        </div>
+      </div>
+      <div
+        class="input-container"
+        style="margin-top: 10px; margin-bottom: 10px"
+      >
+        <label>Email</label>
+        <div>
+          <input type="email" placeholder="Email" formControlName="email" />
+        </div>
+      </div>
+      <div
+        class="input-container"
+        style="margin-top: 10px; margin-bottom: 10px"
+      >
+        <label>Password</label>
+        <div>
+          <input
+            type="password"
+            placeholder="Password"
+            formControlName="password"
+          />
+        </div>
+      </div>
+      <div
+        class="input-container"
+        style="margin-top: 10px; margin-bottom: 10px"
+      >
+        <label>Confirm Password</label>
+        <div>
+          <input
+            type="password"
+            placeholder=" Confirm Password"
+            formControlName="confirmPassword"
+          />
+        </div>
+      </div>
+      <div
+        class="input-container"
+        style="margin-top: 10px; margin-bottom: 10px"
+      >
+        <label>Address</label>
+        <div>
+          <input type="text" placeholder="Address" formControlName="address" />
+        </div>
+      </div>
+
+      <div class="button" style="margin-top: 20px; margin-bottom: 20px">
+        <button type="submit">Register</button>
+      </div>
+
+      <div class="login">
+        Already a User ? {{ " " }}
+        <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }"
+          >Login Here</a
+        >
+      </div>
+    </form>
+  </div>
+</div>
