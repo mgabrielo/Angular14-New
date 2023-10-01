@@ -10,6 +10,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MaterialRoutes } from './material.routing';
 import { MaterialModule } from '../shared/material-module';
 import { ViewBillProductsComponent } from './dialog/view-bill-products/view-bill-products.component';
+import { ConfirmationComponent } from './dialog/confirmation/confirmation.component';
+import { ChangePasswordComponent } from './dialog/change-password/change-password.component';
 
 @NgModule({
   imports: [
@@ -20,11 +22,13 @@ import { ViewBillProductsComponent } from './dialog/view-bill-products/view-bill
     FormsModule,
     ReactiveFormsModule,
     FlexLayoutModule,
-    CdkTableModule
+    CdkTableModule,
   ],
   providers: [],
   declarations: [
-    ViewBillProductsComponent    
-  ]
+    ViewBillProductsComponent,
+    ConfirmationComponent,
+    ChangePasswordComponent,
+  ],
 })
 export class MaterialComponentsModule {}

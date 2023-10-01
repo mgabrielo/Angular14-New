@@ -1,12 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AuthService } from './auth.service';
-import {
-  ActivatedRoute,
-  ActivatedRouteSnapshot,
-  Router,
-} from '@angular/router';
+import { ActivatedRouteSnapshot, Router } from '@angular/router';
 import { SnackbarService } from './snackbar.service';
-import jwt_decode from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 import { GlobalConstants } from '../shared/global-constants';
 
 @Injectable({
@@ -26,7 +22,7 @@ export class RouteGuardService {
     const token: any = localStorage.getItem('token');
     var tokenPayload: any;
     try {
-      tokenPayload = jwt_decode(token);
+      tokenPayload = jwtDecode(token);
     } catch (error) {
       localStorage.clear();
       this.router.navigate(['/']);
