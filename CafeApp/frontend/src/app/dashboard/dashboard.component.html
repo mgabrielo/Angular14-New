@@ -1,0 +1,47 @@
+<body>
+  <mat-card>
+    <b><span>Dashboard</span></b>
+  </mat-card>
+  <br />
+  <div style="display: flex; flex-direction: row">
+    <div class="column">
+      <div class="card">
+        <div class="container">
+          <h2 class="title">Category:</h2>
+          <h2 class="title">{{ data?.category }}</h2>
+          <div class="new-card-align">
+            <button class="button" [routerLink]="['/cafe/category']">
+              View Category
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <div class="container">
+          <h2 class="title">Total Product:</h2>
+          <h2 class="title">{{ data?.product }}</h2>
+          <div class="new-card-align">
+            <button class="button" [routerLink]="['/cafe/product']">
+              View Product
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="card">
+        <div class="container">
+          <h2 class="title">Total Bill:</h2>
+          <h2 class="title">{{ data?.bill }}</h2>
+          <div class="new-card-align">
+            <button class="button" [routerLink]="['/cafe/bill']">
+              View Bill
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
