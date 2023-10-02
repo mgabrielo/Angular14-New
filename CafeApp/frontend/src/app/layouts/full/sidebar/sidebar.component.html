@@ -6,9 +6,9 @@
     group="{{ menuItem.state }}"
   >
     <a
-      appAccordionLink
-      [routerLink]="['/', menuItem.state]"
-      *ngIf="menuItem.role === '' || menuItem.role === tokenPayload"
+      appAccordionToggle
+      [routerLink]="['/cafe', menuItem.state]"
+      *ngIf="menuItem.role === '' || menuItem.role === tokenPayload?.role"
     >
       <mat-icon>{{ menuItem.icon }}</mat-icon>
       <span>{{ menuItem.name }}</span>
