@@ -26,8 +26,9 @@ router.get('/get', auth.authToken, (req, res, next) => {
     })
 })
 
-router.patch('/update', auth.authToken, checkRole.checkRole, (req, res, next) => {
+router.patch('/update', auth.authToken, checkRole.checkRole, (req, res) => {
     let product = req.body;
+    console.log('id:--', product.id)
     let query = "update category set name=? where id=?";
     connection.query(query, [product.name, product.id], (err, result) => {
         if (!err) {
